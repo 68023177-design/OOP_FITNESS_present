@@ -19,22 +19,27 @@ export function S02Overview() {
     >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {MODULES.map((m) => (
-          <div key={m.name} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 transition hover:border-emerald-500/40">
-            <div className="flex items-center gap-2">
-              <span className="text-xl">{m.emoji}</span>
-              <span className="font-bold text-white">{m.name}</span>
+          <div
+            key={m.name}
+            className="group rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-emerald-400/40 hover:bg-white/[0.07] hover:shadow-xl hover:shadow-emerald-500/10"
+          >
+            <div className="flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 text-xl ring-1 ring-white/10 transition group-hover:from-emerald-500/30 group-hover:to-teal-500/30">
+                {m.emoji}
+              </span>
+              <span className="text-base font-bold text-white">{m.name}</span>
             </div>
-            <p className="mt-1.5 text-sm text-slate-400">{m.desc}</p>
+            <p className="mt-3 text-sm leading-relaxed text-slate-400">{m.desc}</p>
           </div>
         ))}
       </div>
 
-      <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-2xl border border-sky-500/30 bg-sky-500/10 px-4 py-3 text-sm text-sky-100">
-        <span className="font-semibold text-sky-50">เทคโนโลยี:</span>
+      <div className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-2xl border border-sky-400/20 bg-gradient-to-r from-sky-500/10 to-teal-500/10 px-4 py-3 text-sm text-sky-100 backdrop-blur">
+        <span className="font-bold text-sky-200">เทคโนโลยี:</span>
         <span>React + TypeScript + Tailwind CSS</span>
-        <span className="text-sky-400">·</span>
+        <span className="text-sky-400/70">·</span>
         <span>ข้อมูลบันทึกใน localStorage</span>
-        <span className="text-sky-400">·</span>
+        <span className="text-sky-400/70">·</span>
         <span>Hook useSyncExternalStore เชื่อมต่อ Singleton Service</span>
       </div>
     </Slide>

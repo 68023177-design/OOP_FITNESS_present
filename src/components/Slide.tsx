@@ -12,14 +12,16 @@ export function Slide({ badge, title, subtitle, children, center = false }: Slid
   return (
     <section className="flex min-h-full flex-col">
       {(badge || title) && (
-        <header className="mb-6 shrink-0">
+        <header className="mb-7 shrink-0">
           {badge && (
-            <span className="inline-block rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-xs font-semibold tracking-wide text-emerald-300">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-slate-300 backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse-dot" />
               {badge}
             </span>
           )}
-          {title && <h2 className="mt-3 text-2xl font-bold text-white sm:text-3xl">{title}</h2>}
-          {subtitle && <p className="mt-1 text-sm text-slate-400 sm:text-base">{subtitle}</p>}
+          {title && <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">{title}</h2>}
+          {subtitle && <p className="mt-2 max-w-3xl text-sm text-slate-400 sm:text-base">{subtitle}</p>}
+          <div className="mt-5 h-px w-full bg-gradient-to-r from-white/20 via-white/5 to-transparent" />
         </header>
       )}
       <div className={center ? 'flex min-h-0 flex-1 flex-col items-center justify-center' : 'min-h-0 flex-1'}>
